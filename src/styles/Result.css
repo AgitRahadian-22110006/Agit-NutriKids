@@ -1,0 +1,179 @@
+/* File: src/styles/Results.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background: radial-gradient(circle at top left, #FFEFD5, #FFB6C1);
+  overflow-y: auto;
+  min-height: 100vh;
+  position: relative;
+  padding: 2rem;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  max-width: 700px;
+  width: 90%;
+  margin: 60px auto;
+  padding: 30px;
+  box-shadow: 
+    0 0 25px rgba(102,204,255,0.6),
+    0 0 45px rgba(255,153,204,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #3366FF;
+  text-shadow: 1px 1px 4px #FF99CC;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.meta div {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #333;
+  font-size: 1rem;
+}
+
+.progress-group {
+  margin: 18px 0;
+}
+
+.progress-label {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #555;
+  font-size: 1rem;
+}
+
+.progress-label:before {
+  content: '💜';
+  margin-right: 6px;
+  font-size: 1.2rem;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 14px;
+  background: #eee;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  transition: width 1s ease-out;
+  background: linear-gradient(90deg, #66ccff, #ff99cc);
+}
+
+.status {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.status span {
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
+}
+
+.severe    { background: #E53E3E; }
+.moderate  { background: #DD6B20; }
+.normal    { background: #38A169; }
+.overweight{ background: #805AD5; }
+
+.recommendation {
+  margin-top: 2rem;
+}
+
+.recommendation-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.recommendation-list li {
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.recommendation-list h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  color: #3366FF;
+  margin-bottom: 0.75rem;
+}
+
+.recommendation-list ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.recommendation-list li strong { color: #2D3748; }
+
+.recommendation-list li ul li {
+  margin-bottom: 0.5rem;
+}
+
+.recommendation-list li ul li:before {
+  content: '✔';
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: #38A169;
+}
+
+.recommendation-list li ul ul {
+  padding-left: 1rem;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer button {
+  font-weight: 700;
+  background: #3366FF;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  transform: translateY(-2px);
+}

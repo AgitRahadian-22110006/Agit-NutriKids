@@ -1,0 +1,49 @@
+/* Import Google Fonts via index.html atau CSS-in-JS jika dibutuhkan */
+
+/* Reset dan font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+  padding-top: 80px; /* offset untuk navbar fixed */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Root Variabel */
+:root {
+  --gradient-1: #ff9a9e;
+  --gradient-2: #fad0c4;
+  --accent: #4dd0e1;
+  --accent-dark: #0288d1;
+  --text-light: #ffffff;
+  --text-dark: #1a237e;
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --card-blur: 12px;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --gradient-1: #3a3a3a;
+  --gradient-2: #1a1a1a;
+  --accent: #90caf9;
+  --accent-dark: #42a5f5;
+  --text-light: #e0e0e0;
+  --text-dark: #e0e0e0;
+  --card-bg: rgba(20, 20, 20, 0.4);
+  --card-blur: 12px;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
