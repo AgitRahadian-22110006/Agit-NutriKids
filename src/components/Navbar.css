@@ -1,0 +1,221 @@
+/* ===== Navbar dasar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  padding: 0 5.5rem; /* padding kiri kanan */
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  transition: color 0.3s ease;
+  margin-left: 0;
+  padding-left: 0;
+  flex-shrink: 0;
+}
+
+.navbar-logo:hover {
+  color: #ffdc6e;
+}
+
+/* Menu toggle (hamburger) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: 1px;
+}
+
+/* Animasi saat toggle menu aktif */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #ffdc6e;
+  color: #1a1a1a;
+}
+
+/* Tombol toggle dark mode */
+.darkmode-toggle {
+  margin-left: 20px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.darkmode-toggle:hover {
+  background-color: #ffdc6e;
+  color: #1a1a1a;
+  border-color: #ffdc6e;
+}
+
+/* === Responsive: Untuk layar kecil (mobile) === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    height: calc(100vh - 60px);
+    background: linear-gradient(180deg, #3a7bd5, #00d2ff);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: -2px 0 15px rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+  }
+
+  .darkmode-toggle {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* === Dark Mode Styles === */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode .navbar {
+  background: linear-gradient(90deg, #232526, #414345);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .navbar-logo {
+  color: #f0f0f0;
+}
+
+body.dark-mode .navbar-logo:hover {
+  color: #ffd54f;
+}
+
+body.dark-mode .nav-link {
+  color: #ddd;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  background-color: #ffd54f;
+  color: #232526;
+}
+
+body.dark-mode .menu-toggle .bar {
+  background-color: #eee;
+}
+
+body.dark-mode .nav-menu {
+  background: linear-gradient(90deg, #232526, #414345);
+  box-shadow: -2px 0 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .darkmode-toggle {
+  border-color: #eee;
+  color: #eee;
+}
+
+body.dark-mode .darkmode-toggle:hover {
+  background-color: #ffd54f;
+  color: #232526;
+  border-color: #ffd54f;
+}
+
+/* Smooth transition untuk body dan navbar */
+body, .navbar, .nav-menu, .nav-link, .darkmode-toggle {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

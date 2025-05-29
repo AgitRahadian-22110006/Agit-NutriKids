@@ -1,10 +1,9 @@
-// File: src/pages/Input.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { calculateZScore } from '../utils/calculateZScore'; // pastikan path sesuai
-import '../styles/Input.css'; // pastikan path sesuai
-import logo from '../assets/logo-agitnutrikids.png'; // logo
-import bayiImage from '../assets/bayi_index.png'; // gambar bayi
+import { calculateZScore } from '../utils/calculateZScore';
+import Navbar from '../components/Navbar';  // Import Navbar
+import '../styles/Input.css';
+import bayiImage from '../assets/bayi_index.png';
 
 export default function Input() {
   const navigate = useNavigate();
@@ -53,18 +52,7 @@ export default function Input() {
 
   return (
     <>
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="brand">
-          <img src={logo} alt="Logo AgitNutriKids" className="logo" />
-          AgitNutriKids
-        </div>
-        <div className="menu">
-          <a href="/">Home</a>
-          <a href="/input">Kalkulator</a>
-          <a href="/info">Info</a>
-        </div>
-      </nav>
+      <Navbar /> {/* Tambahkan Navbar di atas */}
 
       {/* Main container */}
       <div className="container">
@@ -105,9 +93,7 @@ export default function Input() {
 
         {/* Form Card */}
         <div className="card">
-          {/* Gambar bayi kecil dan bulat di atas form */}
           <img src={bayiImage} alt="Bayi" className="bayi-image" />
-
           <h1>Input Data Anak</h1>
           <form onSubmit={handleSubmit} noValidate>
             <label>

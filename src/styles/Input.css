@@ -11,7 +11,6 @@
   --input-border: #cccccc;
   --error-color: #e03e3e;
   --success-color: #4caf50;
-  --navbar-bg: rgba(255, 255, 255, 0.15);
   --footer-bg: rgba(255, 255, 255, 0.1);
   --table-bg: rgba(255, 255, 255, 0.25);
   --table-header-bg: var(--accent);
@@ -30,50 +29,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 60px; /* space for navbar */
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: var(--navbar-bg);
-  backdrop-filter: blur(15px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.navbar .brand {
-  font-family: 'Baloo Paaji 2', cursive;
-  font-size: 1.8rem;
-  color: var(--accent-dark);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.navbar .brand .logo {
-  height: 35px;
-  width: auto;
-}
-
-.navbar .menu a {
-  color: var(--text-primary);
-  text-decoration: none;
-  margin-left: 2rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.navbar .menu a:hover {
-  color: var(--accent-dark);
+  /* padding-top: 60px;  <-- dihapus karena navbar dipisah */
 }
 
 /* Hero Image */
@@ -111,12 +67,13 @@ body {
   border-collapse: collapse;
   color: var(--text-primary);
   font-weight: 600;
+  font-size: 1rem; /* default font size */
 }
 
 .info-table thead {
   background: var(--table-header-bg);
   color: var(--text-light);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   border-radius: 8px;
 }
 
@@ -261,15 +218,15 @@ footer a:hover {
   color: var(--accent);
 }
 
-/* Responsive */
+/* Responsive adjustments for mobile */
 @media (max-width: 600px) {
   .card {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1.5rem;
     margin: 1.5rem auto;
   }
 
   .card h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
 
@@ -290,11 +247,22 @@ footer a:hover {
     padding: 0.75rem;
   }
 
-  .navbar {
-    padding: 0 1rem;
+  /* Info Table font and padding adjustments */
+  .info-table {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .navbar .menu a {
-    margin-left: 1rem;
+  .info-table table {
+    font-size: 0.9rem;
+  }
+
+  .info-table thead {
+    font-size: 1rem;
+  }
+
+  .info-table th,
+  .info-table td {
+    padding: 0.5rem 0.6rem;
   }
 }

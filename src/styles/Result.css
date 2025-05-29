@@ -1,4 +1,4 @@
-/* File: src/styles/Results.css */
+/* File: src/styles/Result.css */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,64 +11,72 @@ body {
   overflow-y: auto;
   min-height: 100vh;
   position: relative;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .bubble {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   animation: floatUp linear infinite;
 }
 
 @keyframes floatUp {
-  0% { transform: translateY(100vh) scale(0); opacity: 0; }
-  50% { opacity: 0.7; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
 }
 
 .card {
   position: relative;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   max-width: 700px;
-  width: 90%;
-  margin: 60px auto;
-  padding: 30px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 1.5rem;
   box-shadow: 
-    0 0 25px rgba(102,204,255,0.6),
-    0 0 45px rgba(255,153,204,0.6);
-  backdrop-filter: blur(8px);
+    0 0 20px rgba(102, 204, 255, 0.5),
+    0 0 30px rgba(255, 153, 204, 0.4);
+  backdrop-filter: blur(6px);
   z-index: 2;
 }
 
 .header h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #3366FF;
   text-shadow: 1px 1px 4px #FF99CC;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .meta div {
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
   font-weight: 700;
   color: #333;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
 }
 
 .progress-group {
-  margin: 18px 0;
+  margin: 1rem 0;
 }
 
 .progress-label {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   font-weight: 700;
   color: #555;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
 }
 
 .progress-label:before {
@@ -93,16 +101,16 @@ body {
 
 .status {
   text-align: center;
-  margin: 25px 0;
+  margin: 1.5rem 0;
 }
 
 .status span {
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: 20px;
   font-weight: 700;
   color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  font-size: 1.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 .severe    { background: #E53E3E; }
@@ -118,21 +126,21 @@ body {
   list-style: none;
   padding: 0;
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .recommendation-list li {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.88);
   border-radius: 12px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .recommendation-list h3 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   color: #3366FF;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .recommendation-list ul {
@@ -140,10 +148,12 @@ body {
   margin: 0;
 }
 
-.recommendation-list li strong { color: #2D3748; }
+.recommendation-list li strong {
+  color: #2D3748;
+}
 
 .recommendation-list li ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .recommendation-list li ul li:before {
@@ -159,21 +169,45 @@ body {
 
 .footer {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.5rem;
 }
 
 .footer button {
   font-weight: 700;
   background: #3366FF;
   color: #fff;
-  padding: 12px 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background 0.3s ease;
   border: none;
   cursor: pointer;
 }
 
 .footer button:hover {
   transform: translateY(-2px);
+  background: #254EDB;
+}
+
+/* Responsive Enhancement */
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 1rem;
+    margin: 1.5rem 0.5rem;
+  }
+
+  .recommendation-list {
+    gap: 1rem;
+  }
+
+  .recommendation-list li {
+    padding: 0.8rem 1rem;
+  }
+
+  .footer button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.05rem;
+  }
 }

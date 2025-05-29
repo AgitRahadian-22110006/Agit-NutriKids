@@ -1,35 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import Navbar from '../components/Navbar';  // Import Navbar
 import '../styles/Home.css';
 import Logo from '../assets/logo-agitnutrikids.png';
 
 const Home = () => {
-  useEffect(() => {
-    const toggle = document.getElementById('toggle-mode');
-    const handleToggle = () => {
-      document.documentElement.classList.toggle('dark');
-      toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
-    };
-    toggle.addEventListener('click', handleToggle);
-    return () => toggle.removeEventListener('click', handleToggle);
-  }, []);
-
   return (
     <>
-      {/* Navbar */}
-      <nav>
-        <div className="brand">
-          <img src={Logo} alt="AgitNutriKids Logo" />
-          AgitNutriKids
-        </div>
-        <div className="menu">
-          <a href="#home">Home</a>
-          <a href="/input">Kalkulator</a>
-          <a href="#features">Fitur</a>
-          <a href="/info">Info</a>
-          <button id="toggle-mode">🌙</button>
-        </div>
-      </nav>
-
+      <Navbar />  {/* Panggil Navbar */}
+      
       {/* Hero Section */}
       <section id="home" className="hero">
         <div className="shape shape1"></div>
@@ -74,7 +52,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer>
+      <footer className="footer">
         <p>Hubungi kami: <a href="mailto:info@agitnutrikids.com">info@agitnutrikids.com</a> | +62 812 3456 7890</p>
         <p>&copy; 2025 AgitNutriKids. All rights reserved.</p>
       </footer>
