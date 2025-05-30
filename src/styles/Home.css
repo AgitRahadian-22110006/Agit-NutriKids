@@ -15,7 +15,7 @@ body.dark {
   --gradient-2: #1a1a1a;
   --accent: #90caf9;
   --accent-dark: #42a5f5;
-  --text-light: #000000;
+  --text-light: #faefef;
   --text-dark: #000000;
   --card-bg: #ffffff;
   --card-blur: 0;
@@ -278,10 +278,29 @@ footer a {
   }
 
   .about p {
-    font-size: 1rem;
-  }
+  font-size: 1rem;
+  color: white;
+}
+
+
 
   footer {
     font-size: 0.85rem;
   }
+}
+body.dark .hero::before {
+  background: linear-gradient(135deg, #3a3a3a, #1a1a1a);
+}
+
+body.dark .shape1 {
+  background: #1a1a1a;
+}
+
+body.dark .shape2 {
+  background: #3a3a3a;
+}
+
+body.dark .about {
+  background: #121212;
+  color: #ffffff;
 }
